@@ -1,5 +1,5 @@
-#ifndef C_NOOTER_H
-#define C_NOOTER_H
+#ifndef NOOTER_H
+#define NOOTER_H
 
 #include <QString>
 #include <QList>
@@ -34,4 +34,4 @@ public:
     void endTurn();
 };
 
-#endif // C_NOOTER_H
+#endif // NOOTER_H

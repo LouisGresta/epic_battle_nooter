@@ -13,17 +13,17 @@ SOURCES += \
     battleground.cpp \
     main.cpp \
     mainwindow.cpp \
+    nooter.cpp \
     player.cpp \
-    type.cpp \
-    c_nooter.cpp
+    type.cpp
 
 HEADERS += \
     attack.h \
     battleground.h \
     mainwindow.h \
+    nooter.h \
     player.h \
-    type.h \
-    c_nooter.h
+    type.h
 
 FORMS += \
     mainwindow.ui
