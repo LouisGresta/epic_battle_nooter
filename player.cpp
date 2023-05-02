@@ -11,14 +11,14 @@ Player::Player(int i, QString n):
 
 }
 
-void Player::addNooter(Nooter *n)
+void Player::addNooter(Nooter n)
 {
-    team.append(&n);
+    this->team.append(&n);
 }
 
-void Player::removeNooter(Nooter *n)
+void Player::removeNooter(Nooter n)
 {
-    team.removeOne(&n);
+    this->team.removeOne(&n);
 
 }
 

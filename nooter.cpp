@@ -55,13 +55,13 @@ Nooter::Nooter()
 
 }
 
-Nooter::Nooter(QString n, Attack a[], int hp, int e, int energy_growth):
+Nooter::Nooter(QString n, QList<Attack *> a[], int hp, int e, int energy_growth):
     name(n),actual_hp(hp),maximum_hp(hp),actual_energy(e),initial_energy(e),energy_gain_per_turn(energy_growth)
 
 {
     //initialisation du tableau des atk
     for(int i=0; i<4 ; i++)
     {
-        attacks[i]=a[i];
+        this->attacks.append(a[i]);
     }
 }
