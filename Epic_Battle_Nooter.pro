@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     attack.cpp \
+    battleground.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     attack.h \
+    battleground.h \
     mainwindow.h \
     player.h \
     type.h \
