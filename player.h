@@ -11,15 +11,16 @@
 class Player
 {
 private:
-    int id;
     QString name;
-    QList<Nooter *> team;
+    QList<Nooter> team;
 
 public:
     Player();
-    Player(int i, QString n);
-    void addNooter(Nooter n);
-    void removeNooter(Nooter n);
+    Player(QString name);
+    void addNooter(Nooter nooter);
+    void removeNooter(Nooter nooter);
+    QString toString();
+    bool operator==(Player player) const;
 };
 
 #endif // PLAYER_H

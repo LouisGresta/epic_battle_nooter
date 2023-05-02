@@ -2,7 +2,7 @@
 
 #include <QApplication>
 
-void test1V1(void) {
+void testToString(void) {
 
 }
 
@@ -12,5 +12,5 @@ int main(int argc, char *argv[])
     MainWindow w;
 //    w.show();
 //    return a.exec();
-    test1V1();
+    testToString();
 }
