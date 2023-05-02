@@ -19,6 +19,7 @@ void Player::addNooter(Nooter *n)
 void Player::removeNooter(Nooter *n)
 {
     team.removeOne(&n);
+
 }
 
 

@@ -21,6 +21,7 @@ public:
     Attack(QString name, QString description, int damage, int energy_cost, int cooldown, Type type);
     int getDamage() const;
     void setCooldown(int newCooldown);
+    int getEnergy_cost() const;
 };
 
 #endif // C_ATTACK_H

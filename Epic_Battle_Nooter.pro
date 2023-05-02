@@ -13,13 +13,15 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
-    type.cpp
+    type.cpp \
+    c_nooter.cpp
 
 HEADERS += \
     attack.h \
     mainwindow.h \
     player.h \
-    type.h
+    type.h \
+    c_nooter.h
 
 FORMS += \
     mainwindow.ui

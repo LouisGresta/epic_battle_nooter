@@ -4,6 +4,9 @@
 #include <QList>
 #include <QString>
 
+#include "c_nooter.h"
+
+
 
 class Player
 {
