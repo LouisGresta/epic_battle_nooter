@@ -5,7 +5,7 @@
 #include <QList>
 #include "attack.h"
 
-class C_Nooter
+class Nooter
 {
 
 private:
@@ -21,8 +21,8 @@ private:
 
 
 public:
-    C_Nooter();
-    C_Nooter(QString n, Attack a[], int hp , int energy, int energy_growth);
+    Nooter();
+    Nooter(QString n, Attack a[], int hp , int energy, int energy_growth);
     int getActual_hp() const;
     int getActual_energy() const;
     int getMaximum_energy() const;
