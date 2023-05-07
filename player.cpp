@@ -3,9 +3,14 @@
 #include <QTextStream>
 
 Player::Player(QString name):
-    name(name)
+    name(name), team(QList<Nooter>())
 {
 
+}
+
+QList<Nooter> Player::getTeam() const
+{
+    return team;
 }
 
 void Player::addNooter(Nooter nooter)

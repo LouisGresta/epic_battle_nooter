@@ -22,7 +22,6 @@ private:
 
 
 public:
-    Nooter();
     Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth);
     int getActual_hp() const;
     int getActual_energy() const;

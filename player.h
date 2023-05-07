@@ -17,6 +17,7 @@ private:
 public:
     Player();
     Player(QString name);
+    QList<Nooter> getTeam() const;
     void addNooter(Nooter nooter);
     void removeNooter(Nooter nooter);
     QString toString();
