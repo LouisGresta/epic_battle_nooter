@@ -1,7 +1,6 @@
 #include "type.h"
 #include <tuple>
 
-
 Type::Type(QString name, QList<std::tuple<Type, int, int> > types_strenghts):
     name(name), types_strenghts(types_strenghts)
 {

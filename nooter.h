@@ -4,6 +4,7 @@
 #include <QString>
 #include <QList>
 #include "attack.h"
+#include "type.h"
 
 class Nooter
 {
@@ -11,7 +12,7 @@ class Nooter
 private:
     QString name;
     Type type;
-    QList<Attack *> attacks[4];
+    QList<Attack> attacks;
     int actual_hp;
     int maximum_hp;
     int actual_energy;
@@ -21,8 +22,7 @@ private:
 
 
 public:
-    Nooter();
-    Nooter(QString n, Attack a[], int hp , int energy, int energy_growth);
+    Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth);
     int getActual_hp() const;
     int getActual_energy() const;
     int getMaximum_energy() const;
@@ -32,6 +32,8 @@ public:
     int useAttack(Attack a);
     void getAttacked(int value);
     void endTurn();
+    QString toString();
+    bool operator==(Nooter nooter) const;
 };
 
 #endif // NOOTER_H

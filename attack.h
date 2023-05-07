@@ -22,6 +22,8 @@ public:
     int getDamage() const;
     void setCooldown(int newCooldown);
     int getEnergy_cost() const;
+    QString toString();
+    bool operator==(Attack attack) const;
 };
 
 #endif // C_ATTACK_H

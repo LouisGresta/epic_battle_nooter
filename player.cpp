@@ -1,25 +1,45 @@
 #include "player.h"
 
-Player::Player()
+#include <QTextStream>
+
+Player::Player(QString name):
+    name(name), team(QList<Nooter>())
 {
 
 }
 
-Player::Player(int i, QString n):
-    id(i), name(n)
+QList<Nooter> Player::getTeam() const
 {
-
+    return team;
 }
 
-void Player::addNooter(Nooter *n)
+void Player::addNooter(Nooter nooter)
 {
-    team.append(&n);
+    team.append(nooter);
 }
 
-void Player::removeNooter(Nooter *n)
+void Player::removeNooter(Nooter nooter)
 {
-    team.removeOne(&n);
+    team.removeOne(nooter);
+}
 
+QString Player::toString()
+{
+    QString res;
+    QTextStream buf(&res);
+
+    buf << name << " : \nteam : ";
+    foreach (Nooter nooter, team) {
+        buf << "\t" << nooter.toString();
+        if (!team.endsWith(nooter))
+            buf << "\n";
+    }
+    return res;
+}
+
+bool Player::operator==(Player player) const
+{
+    return name == player.name && team == player.team;
 }
 
 

@@ -1,5 +1,14 @@
 #include "nooter.h"
 
+#include <QTextStream>
+
+Nooter::Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth):
+    name(name), type(type), attacks(attacks), actual_hp(hp), maximum_hp(hp), actual_energy(energy),
+    initial_energy(energy), energy_gain_per_turn(energy_growth)
+{
+
+}
+
 int Nooter::getActual_hp() const
 {
     return actual_hp;
@@ -30,38 +39,48 @@ int Nooter::getMaximum_hp() const
     return maximum_hp;
 }
 
-int Nooter::useAttack(Attack a)
+int Nooter::useAttack(Attack attack)
 {
-    if(a.getEnergy_cost()<= this->getActual_energy())
+    if(attack.getEnergy_cost()<= actual_energy)
     {
-        this->actual_energy-=a.getEnergy_cost();
-        return a.getDamage();
+        actual_energy-=attack.getEnergy_cost();
+        return attack.getDamage();
     }
     return -1;
 }
 
 void Nooter::getAttacked(int value)
 {
-    this->actual_hp-= value;
+    actual_hp-= value;
 }
 
 void Nooter::endTurn()
 {
-    this->actual_energy+=this->getEnergy_gain_per_turn();
+    actual_energy+=energy_gain_per_turn;
 }
 
-Nooter::Nooter()
+QString Nooter::toString()
 {
-
-}
-
-Nooter::Nooter(QString n, Attack a[], int hp, int e, int energy_growth):
-    name(n),actual_hp(hp),maximum_hp(hp),actual_energy(e),initial_energy(e),energy_gain_per_turn(energy_growth)
-
-{
-    //initialisation du tableau des atk
-    for(int i=0; i<4 ; i++)
-    {
-        attacks[i]=a[i];
+    QString res;
+    QTextStream buf(&res);
+    buf << name << " - " << type.getName() << " type : \t";
+    buf << actual_hp << "/" << maximum_hp << " hp - " << actual_energy << "/" << maximum_energy << "energy \n";
+    foreach (Attack attack, attacks) {
+        buf << attack.toString();
+        if (!attacks.endsWith(attack))
+            buf << "\n";
     }
+    return res;
+}
+
+bool Nooter::operator==(Nooter nooter) const
+{
+    return name == nooter.name
+            && type == nooter.type
+            && attacks == nooter.attacks
+            && actual_hp == nooter.actual_hp
+            && maximum_hp == nooter.maximum_hp
+            && actual_energy == nooter.actual_energy
+            && maximum_energy == nooter.maximum_energy
+            && energy_gain_per_turn == nooter.energy_gain_per_turn;
 }

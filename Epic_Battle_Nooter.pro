@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     attack.cpp \
     battleground.cpp \
+    canevas.cpp \
     main.cpp \
     mainwindow.cpp \
     nooter.cpp \
@@ -20,6 +21,8 @@ SOURCES += \
 HEADERS += \
     attack.h \
     battleground.h \
+    canevas.h \
+    initParameterException.h \
     mainwindow.h \
     nooter.h \
     player.h \
@@ -32,3 +35,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    ressources.qrc

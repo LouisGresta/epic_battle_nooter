@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ressources/background/winter_battle_background.jpg</file>
+    </qresource>
+</RCC>
