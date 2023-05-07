@@ -1,28 +1,29 @@
 #include "type.h"
+#include <tuple>
 
-Type::Type(QString name, QList<Type> strong_types, QList<Type> weak_types):
-    name(name), strong_types(strong_types), weak_types(weak_types)
+
+Type::Type(QString name, QList<std::tuple<Type, int, int> > types_strenghts):
+    name(name), types_strenghts(types_strenghts)
 {
 
 }
 
-Type Type::getStrongType(int index) const
+Type Type::getType(int index) const
 {
-    return strong_types.at(index);
+    return std::get<0>(types_strenghts[index]);
 }
 
-Type Type::getWeakType(int index) const
+bool Type::isInTypes(Type type)
 {
-    return weak_types.at(index);
+    return types_strenghts.contains(type);
 }
 
-bool Type::isInWeakType(Type type)
+void Type::addType(std::tuple<Type, int, int> type)
 {
-    return weak_types.contains(type);
+    types_strenghts.append(type);
 }
 
-bool Type::isInStrongType(Type type)
+void Type::addTypes(QList<std::tuple<Type, int, int> > list)
 {
-    return strong_types.contains(type);
+    types_strenghts.append(list);
 }
-
