@@ -6,20 +6,20 @@
 
 #include "nooter.h"
 
-
-
 class Player
 {
 private:
-    int id;
     QString name;
-    QList<Nooter *> team;
+    QList<Nooter> team;
 
 public:
     Player();
-    Player(int i, QString n);
-    void addNooter(Nooter n);
-    void removeNooter(Nooter n);
+    Player(QString name);
+    QList<Nooter> getTeam() const;
+    void addNooter(Nooter nooter);
+    void removeNooter(Nooter nooter);
+    QString toString();
+    bool operator==(Player player) const;
     int getId() const;
     QString getName() const;
 };

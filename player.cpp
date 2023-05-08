@@ -1,5 +1,7 @@
 #include "player.h"
 
+#include <QTextStream>
+
 int Player::getId() const
 {
     return id;
@@ -10,26 +12,51 @@ QString Player::getName() const
     return name;
 }
 
-Player::Player()
+int Player::getId() const
 {
-
+    return id;
 }
 
-Player::Player(int i, QString n):
-    id(i), name(n)
+QString Player::getName() const
 {
-
+    return name;
 }
 
-void Player::addNooter(Nooter n)
+Player::Player(QString name) : name(name), team(QList<Nooter>())
 {
-    this->team.append(&n);
 }
 
-void Player::removeNooter(Nooter n)
+QList<Nooter> Player::getTeam() const
 {
-    this->team.removeOne(&n);
-
+    return team;
 }
 
+void Player::addNooter(Nooter nooter)
+{
+    team.append(nooter);
+}
 
+void Player::removeNooter(Nooter nooter)
+{
+    team.removeOne(nooter);
+}
+
+QString Player::toString()
+{
+    QString res;
+    QTextStream buf(&res);
+
+    buf << name << " : \nteam : ";
+    foreach (Nooter nooter, team)
+    {
+        buf << "\t" << nooter.toString();
+        if (!team.endsWith(nooter))
+            buf << "\n";
+    }
+    return res;
+}
+
+bool Player::operator==(Player player) const
+{
+    return name == player.name && team == player.team;
+}

@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     attack.cpp \
     battleground.cpp \
+    canevas.cpp \
     main.cpp \
     mainwindow.cpp \
     nooter.cpp \
@@ -21,6 +22,8 @@ SOURCES += \
 HEADERS += \
     attack.h \
     battleground.h \
+    canevas.h \
+    initParameterException.h \
     mainwindow.h \
     nooter.h \
     player.h \

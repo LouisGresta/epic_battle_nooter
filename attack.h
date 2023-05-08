@@ -5,8 +5,6 @@
 
 #include <QString>
 
-
-
 class Attack
 {
 private:
@@ -17,11 +15,14 @@ private:
     int cooldown;
     int starting_cooldown;
     Type type;
+
 public:
     Attack(QString name, QString description, int damage, int energy_cost, int cooldown, Type type);
     int getDamage() const;
     void setCooldown(int newCooldown);
     int getEnergy_cost() const;
+    QString toString();
+    bool operator==(Attack attack) const;
     QString getName() const;
     QString getDescription() const;
 };
