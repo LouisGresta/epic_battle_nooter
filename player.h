@@ -20,6 +20,8 @@ public:
     Player(int i, QString n);
     void addNooter(Nooter n);
     void removeNooter(Nooter n);
+    int getId() const;
+    QString getName() const;
 };
 
 #endif // PLAYER_H

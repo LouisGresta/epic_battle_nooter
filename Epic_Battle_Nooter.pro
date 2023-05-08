@@ -15,6 +15,7 @@ SOURCES += \
     mainwindow.cpp \
     nooter.cpp \
     player.cpp \
+    qstd.cpp \
     type.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
     mainwindow.h \
     nooter.h \
     player.h \
+    qstd.h \
     type.h
 
 FORMS += \

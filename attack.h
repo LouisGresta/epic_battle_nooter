@@ -22,6 +22,8 @@ public:
     int getDamage() const;
     void setCooldown(int newCooldown);
     int getEnergy_cost() const;
+    QString getName() const;
+    QString getDescription() const;
 };
 
 #endif // C_ATTACK_H
