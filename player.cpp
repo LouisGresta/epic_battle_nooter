@@ -2,21 +2,6 @@
 
 #include <QTextStream>
 
-int Player::getId() const
-{
-    return id;
-}
-
-QString Player::getName() const
-{
-    return name;
-}
-
-int Player::getId() const
-{
-    return id;
-}
-
 QString Player::getName() const
 {
     return name;

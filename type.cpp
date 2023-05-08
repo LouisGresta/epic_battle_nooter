@@ -15,11 +15,6 @@ Type Type::getType(int index) const
     return std::get<0>(types_strenghts[index]);
 }
 
-bool Type::isInType(Type type)
-{
-    return types_strenghts.contains(type);
-}
-
 void Type::addType(std::tuple<Type, int, int> type)
 {
     types_strenghts.append(type);

@@ -18,9 +18,10 @@ void testCreationNooters()
 
 void testCreationJoueurs()
 {
-    Player Joueur1(1, "Joueur 1");
-    Player Joueur2(2, "Joueur 2");
-    qstd::cout << "Joueur 1 :" << Joueur1.getId() << " " << Joueur1.getName() << " Joueur 2 :" << Joueur2.getId() << " " << Joueur2.getName();
+    Player Joueur1("Joueur 1");
+    Player Joueur2("Joueur 2");
+    qstd::cout << Joueur1.toString() << "\n";
+    qstd::cout << Joueur2.toString() << "\n";
 }
 
 /*void testCreationAttacks(){
