@@ -1,24 +1,34 @@
 #ifndef TYPE_H
 #define TYPE_H
 
+#include "type_tuple.h"
+
 #include <QList>
 #include <QString>
 
-
-
 class Type
 {
-private:
-    QString name;
-    QList<std::tuple<Type, int, int>> types_strenghts;
 public:
     Type(QString name,
-         QList<std::tuple<Type, int, int>> types_strenghts = QList<std::tuple<Type, int, int>>()
-         );
-    Type getType(int index) const;
+         QList<Type_tuple> types_strenghts = QList<Type_tuple>());
+
+    QString getName() const;
+    QString getNameAtIndex(int index);
+    float getAtkAtIndex(int index);
+    float getDefAtIndex(int index);
+
     bool isInTypes(Type type);
-    void addType(std::tuple<Type, int, int> type);
-    void addTypes(QList<std::tuple<Type, int, int>> list);
+
+    void addType(Type_tuple tuple);
+    void addType(QList<Type_tuple> list_tuple);
+
+    void setType(const Type &newType);
+    QString toString();
+    bool operator ==(Type type) const;
+
+private:
+    QString name;
+    QList<Type_tuple> types_strenghts;
 };
 
 #endif // TYPE_H
