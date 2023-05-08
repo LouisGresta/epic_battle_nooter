@@ -5,22 +5,32 @@ Type::Type(QString name, QList<std::tuple<Type, int, int>> types_strenghts) : na
 {
 }
 
+QString Type::getName() const
+{
+    return name;
+}
+
 Type Type::getType(int index) const
 {
     return std::get<0>(types_strenghts[index]);
 }
 
-bool Type::isInTypes(Type type)
+bool Type::isInType(Type type)
 {
     return types_strenghts.contains(type);
 }
 
-bool Type::isInWeakType(Type type)
+void Type::addType(std::tuple<Type, int, int> type)
 {
-    return weak_types.contains(type);
+    types_strenghts.append(type);
 }
 
-bool Type::isInStrongType(Type type)
+void Type::addTypes(QList<std::tuple<Type, int, int>> list)
 {
-    return strong_types.contains(type);
+    types_strenghts.append(list);
+}
+
+bool Type::operator==(Type type) const
+{
+    return name == type.name && types_strenghts == type.types_strenghts;
 }

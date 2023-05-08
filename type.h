@@ -17,6 +17,8 @@ public:
     bool isInTypes(Type type);
     void addType(std::tuple<Type, int, int> type);
     void addTypes(QList<std::tuple<Type, int, int>> list);
+    bool operator==(Type type) const;
+    QString getName() const;
 };
 
 #endif // TYPE_H
