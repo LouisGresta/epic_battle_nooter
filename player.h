@@ -6,8 +6,6 @@
 
 #include "nooter.h"
 
-
-
 class Player
 {
 private:
@@ -22,6 +20,8 @@ public:
     void removeNooter(Nooter nooter);
     QString toString();
     bool operator==(Player player) const;
+    int getId() const;
+    QString getName() const;
 };
 
 #endif // PLAYER_H

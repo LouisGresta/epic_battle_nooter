@@ -2,10 +2,13 @@
 
 #include <QTextStream>
 
-Player::Player(QString name):
-    name(name), team(QList<Nooter>())
+QString Player::getName() const
 {
+    return name;
+}
 
+Player::Player(QString name) : name(name), team(QList<Nooter>())
+{
 }
 
 QList<Nooter> Player::getTeam() const
@@ -29,7 +32,8 @@ QString Player::toString()
     QTextStream buf(&res);
 
     buf << name << " : \nteam : ";
-    foreach (Nooter nooter, team) {
+    foreach (Nooter nooter, team)
+    {
         buf << "\t" << nooter.toString();
         if (!team.endsWith(nooter))
             buf << "\n";
@@ -41,5 +45,3 @@ bool Player::operator==(Player player) const
 {
     return name == player.name && team == player.team;
 }
-
-

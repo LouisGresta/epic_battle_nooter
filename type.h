@@ -24,7 +24,7 @@ public:
 
     void setType(const Type &newType);
     QString toString();
-    bool operator ==(Type type) const;
+    bool operator==(Type type) const;
 
 private:
     QString name;

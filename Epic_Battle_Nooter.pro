@@ -17,9 +17,8 @@ SOURCES += \
     mainwindow.cpp \
     nooter.cpp \
     player.cpp \
-    ressources/qstd.cpp \
-    type.cpp \
-    type_table.cpp
+    qstd.cpp \
+    type.cpp
 
 HEADERS += \
     attack.h \
@@ -29,7 +28,7 @@ HEADERS += \
     mainwindow.h \
     nooter.h \
     player.h \
-    ressources/qstd.h \
+    qstd.h \
     type.h \
     type_table.h \
     type_tuple.h
