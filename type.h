@@ -20,7 +20,6 @@ public:
     bool isInTypes(Type type);
 
     void addType(Type_tuple tuple);
-    void addType(QList<Type_tuple> list_tuple);
 
     void setType(const Type &newType);
     QString toString();

@@ -6,35 +6,32 @@ Type::Type(QString name, QList<Type_tuple> types_strenghts) : name(name), types_
 {
 }
 
-Type Type::getType(int index) const
+QString Type::getName() const
 {
-    return std::get<0>(types_strenghts[index]);
+    return name;
+}
+
+QString Type::getNameAtIndex(int index)
+{
+    return types_strenghts.at(index).name;
+}
+
+float Type::getAtkAtIndex(int index)
+{
+    return types_strenghts.at(index).coef;
 }
 
 bool Type::isInTypes(Type type)
 {
-    std::tuple<Type, int, int> *tuple = nullptr;
-    foreach (*tuple, types_strenghts)
+    foreach (Type_tuple type_tuple, types_strenghts)
     {
-        if (std::get<0>(*tuple) == type)
-        {
+        if (type_tuple.name == type.getName())
             return true;
-        }
     }
     return false;
 }
 
-void Type::addType(std::tuple<Type, int, int> type)
+void Type::addType(Type_tuple tuple)
 {
-    types_strenghts.append(type);
-}
-
-void Type::addTypes(QList<std::tuple<Type, int, int>> list)
-{
-    types_strenghts.append(list);
-}
-
-bool Type::operator==(Type type) const
-{
-    return name == type.name && types_strenghts == type.types_strenghts;
+    types_strenghts.append(tuple);
 }
