@@ -2,7 +2,8 @@
 #include <QTextStream>
 #include <tuple>
 
-Type::Type(QString name, QList<Type_tuple> types_strenghts) : name(name), types_strenghts(types_strenghts)
+Type::Type(QString name, QList<Type_tuple> types_strenghts) :
+    name(name), types_strenghts(types_strenghts)
 {
 }
 
@@ -39,4 +40,9 @@ void Type::addType(Type_tuple tuple)
 bool Type::operator==(Type type) const
 {
     return name == type.name;
+}
+
+QString Type::toString()
+{
+    return getName();
 }
