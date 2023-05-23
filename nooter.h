@@ -22,7 +22,7 @@ private:
 
 
 public:
-    Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth);
+    Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth, int max_energy);
     int getActual_hp() const;
     int getActual_energy() const;
     int getMaximum_energy() const;

@@ -2,12 +2,13 @@
 #include "battleground.h" //battleground include all other classes so don't need to add them
 #include "qstd.h"
 
-
 #include <QApplication>
 #include <QString>
 #include <QTextStream>
 
 using namespace qstd;
+
+Type_table table;
 
 void testToString(void)
 {
@@ -15,9 +16,15 @@ void testToString(void)
 
 void testCreationNooters()
 {
-#include <type_table.h>
+    Attack defo1("deforestation" , "wallah je coupe des arbres", 1000, 0,0,table.getType("Herbe"));
+    Attack defo2("DEFORESTATION" , "encore mieux", 2000, 0,0,table.getType("Herbe"));
+    Attack defo3("DEFORESTATION !" , "encore mieux", 3000, 0,0,table.getType("Herbe"));
+    Attack defo4("DEFORESTATION !!!" , "encore mieux", 4000, 0,0,table.getType("Herbe"));
 
-    // Nooter The_original_noot("The Original Noot",
+    QList<Attack> liste_atk_n = QList<Attack>({defo1,defo2,defo3,defo4});
+    Nooter nootnoot("The_Original_Nooter" , table.getType("Herbe"),liste_atk_n ,10000,20,10,100 );
+    qstd::cout<<"test nooters \n"<<nootnoot.toString();
+
 }
 
 void testCreationJoueurs()
@@ -30,29 +37,35 @@ void testCreationJoueurs()
 
 void testCreationTypes()
 {
-    //affichage du tableau des types
+    // affichage du tableau des types
     cout << "Test Table" << endl;
     Type_table table;
     table.initTable();
 }
 
-/*void testCreationAttacks(){
+void testCreationAttacks()
+{
 
-    Attack defo1("deforestation" , "wallah je coupe des arbres", 1000, 0,0, ??);
-    qstd::cout<<"defo 1:"<<defo1.getName()<<" descrition : "<<defo1.getDescription();
-}*/
+    Attack defo1("deforestation" , "wallah je coupe des arbres", 1000, 0,0,table.getType("Herbe"));
+
+    qstd::cout<<"test attack \n"<<defo1.toString();
+}
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
 
+    cout << "Test Table" << endl;
+    Type_table table;
+    table.initTable();
+
     cout << "TestToString" << endl;
     testToString();
     testCreationJoueurs();
-    testCreationTypes();
-    //    testCreationAttacks();
-    //    testCreationNooters();
+
+    testCreationAttacks();
+    testCreationNooters();
     w.show();
     return a.exec();
 }

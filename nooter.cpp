@@ -2,9 +2,9 @@
 
 #include <QTextStream>
 
-Nooter::Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth):
+Nooter::Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energy, int energy_growth , int max_energy):
     name(name), type(type), attacks(attacks), actual_hp(hp), maximum_hp(hp), actual_energy(energy),
-    initial_energy(energy), energy_gain_per_turn(energy_growth)
+    initial_energy(energy), energy_gain_per_turn(energy_growth),maximum_energy(max_energy)
 {
 
 }
