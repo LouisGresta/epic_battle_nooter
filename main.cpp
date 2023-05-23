@@ -31,6 +31,9 @@ void testCreationJoueurs()
 void testCreationTypes()
 {
     //affichage du tableau des types
+    cout << "Test Table" << endl;
+    Type_table table;
+    table.initTable();
 }
 
 /*void testCreationAttacks(){
@@ -43,10 +46,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-
-    cout << "Test Table" << endl;
-    Type_table table;
-    table.initTable();
 
     cout << "TestToString" << endl;
     testToString();

@@ -16,7 +16,7 @@ Type_table::Type_table()
 
 void Type_table::addType(Type type)
 {
-    table.append(type);
+    listType.append(type);
 }
 
 void Type_table::initTable()
@@ -267,14 +267,26 @@ void Type_table::initNoot(){
     addType(Noot);
 }
 
+Type Type_table::getType(QString nomType)
+{
+    foreach (Type type, this->listType) {
+        if( type.getName() == nomType ){
+            return type;
+        }
+    }
+
+    Type typeVide("Type_vide");
+    return typeVide;
+}
+
 QString Type_table::toString()
 {
     QString res;
     QTextStream buf(&res);
-    buf<<"Type_table contains : [";
+    buf<<"Type_table contains :\n[ ";
 
     int i = 1;
-    foreach (Type type, table) {
+    foreach (Type type, listType) {
         if( i % 3 == 0 ){
             buf<<type.toString()<<"}\n";
         } else if( i % 3 == 1 ){
@@ -283,7 +295,8 @@ QString Type_table::toString()
         else {
             buf<<type.toString()<<", ";
         }
+        i++;
     }
-    buf<<"]";
+    buf<<" ]";
     return res;
 }
