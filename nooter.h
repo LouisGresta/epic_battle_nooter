@@ -4,7 +4,7 @@
 #include <QString>
 #include <QList>
 #include "attack.h"
-#include "type.h"
+#include "type_table.h"
 
 class Nooter
 {

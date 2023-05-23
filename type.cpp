@@ -35,3 +35,8 @@ void Type::addType(Type_tuple tuple)
 {
     types_strenghts.append(tuple);
 }
+
+bool Type::operator==(Type type) const
+{
+    return name == type.name;
+}

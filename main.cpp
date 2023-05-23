@@ -2,6 +2,7 @@
 #include "battleground.h" //battleground include all other classes so don't need to add them
 #include "qstd.h"
 
+
 #include <QApplication>
 #include <QString>
 #include <QTextStream>
@@ -27,6 +28,11 @@ void testCreationJoueurs()
     qstd::cout << Joueur2.toString() << "\n";
 }
 
+void testCreationTypes()
+{
+    //affichage du tableau des types
+}
+
 /*void testCreationAttacks(){
 
     Attack defo1("deforestation" , "wallah je coupe des arbres", 1000, 0,0, ??);
@@ -45,6 +51,7 @@ int main(int argc, char *argv[])
     cout << "TestToString" << endl;
     testToString();
     testCreationJoueurs();
+    testCreationTypes();
     //    testCreationAttacks();
     //    testCreationNooters();
     w.show();

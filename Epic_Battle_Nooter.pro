@@ -18,7 +18,8 @@ SOURCES += \
     nooter.cpp \
     player.cpp \
     qstd.cpp \
-    type.cpp
+    type.cpp \
+    type_table.cpp
 
 HEADERS += \
     attack.h \
