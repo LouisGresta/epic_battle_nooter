@@ -11,7 +11,7 @@ using namespace qstd;
 
 Type_table::Type_table()
 {
-
+    initTable();
 }
 
 void Type_table::addType(Type type)
