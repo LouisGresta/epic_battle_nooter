@@ -7,9 +7,6 @@ class Type_table
 {
 private:
     QList<Type> listType;
-public:
-    Type_table();
-    void addType(Type type);
 
     void initTable();
 
@@ -31,6 +28,9 @@ public:
     void initAcier();
     void initFee();
     void initNoot();
+public:
+    Type_table();
+    void addType(Type type);
 
     Type getType(QString nomType);
 

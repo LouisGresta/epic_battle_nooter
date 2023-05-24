@@ -173,7 +173,7 @@ QString Nooter::toString()
 {
     QString res;
     QTextStream buf(&res);
-    buf << name << " - " << type.getName() << " type : \t";
+    buf << name << " - " << " type : " << type.getName()<<"\n";
     buf << actual_hp << "/" << maximum_hp << " hp - " << actual_energy << "/" << maximum_energy << "energy \n";
     foreach (Attack attack, attacks) {
         buf << attack.toString();
