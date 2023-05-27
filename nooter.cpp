@@ -19,6 +19,7 @@ Nooter::Nooter(QString name)
         Attack decharge("Décharge" , "consomme de sa batterie pour lancer de l'elec", 3000, 20,0,types.getType("Electrique"));
         Attack charge("Charge" , "se jette sur l'ennemie", 4000, 0,0,types.getType("Normal"));
 
+        this->name = "Nootkia";
         this->type = types.getType("Acier");
         this->attacks = QList<Attack>({autodestruction,ultrason,decharge,charge});;
         this->actual_hp = 9000;
@@ -35,6 +36,7 @@ Nooter::Nooter(QString name)
         Attack defo3("DEFORESTATION !" , "je découpe beaucoup", 3000, 0,0,types.getType("Herbe"));
         Attack defo4("DEFORESTATION !!!" , "y'a plus d'arbre", 4000, 0,0,types.getType("Herbe"));
 
+        this->name = "Original_Noot";
         this->type = types.getType("Noot");
         this->attacks = QList<Attack>({defo1,defo2,defo3,defo4});;
         this->actual_hp = 10000;
@@ -51,6 +53,7 @@ Nooter::Nooter(QString name)
         Attack pic("Lance pic" , "envoie les pic de son dos", 3000, 0,0,types.getType("Insect"));
         Attack poing("Coup de poing" , "coup de poing que king kong lui a apprie", 4000, 0,0,types.getType("Combat"));
 
+        this->name = "Nootzilla";
         this->type = types.getType("Dragon");
         this->attacks = QList<Attack>({rugissement,queue,pic,poing});
         this->actual_hp = 9000;
@@ -66,6 +69,7 @@ Nooter::Nooter(QString name)
         Attack grenade("lance grenade" , "GRENADAAAA", 3000, 0,0,types.getType("Roche"));
         Attack tir3("tir de laser" , "pew pew en mieux", 4000, 0,0,types.getType("Acier"));
 
+        this->name = "Terminootor";
         this->type = types.getType("Combat");
         this->attacks = QList<Attack>({tir1,tir2,grenade,tir3});
         this->actual_hp = 9000;
@@ -81,6 +85,7 @@ Nooter::Nooter(QString name)
         Attack neige("Boule de neige" , "lance une boule de neige", 3000, 0,0,types.getType("Glace"));
         Attack eboulement("Eboulement" , "crie fort et crée un éboulement", 4000, 0,0,types.getType("Glace"));
 
+        this->name = "BigNoot";
         this->type = types.getType("Glace");
         this->attacks = QList<Attack>({charge,morsure,neige,eboulement});
         this->actual_hp = 9000;
@@ -96,6 +101,7 @@ Nooter::Nooter(QString name)
         Attack batarang2("BatNootarang empoisonné" , "fallais bien un type poison", 3000, 0,0,types.getType("Poison"));
         Attack ciel("Attaque du ciel" , "se jette d'un batiment pour ecraser son adversaire", 4000, 0,0,types.getType("Vol"));
 
+        this->name = "BatNoot";
         this->type = types.getType("Vol");
         this->attacks = QList<Attack>({uppercut,batarang1,batarang2,ciel});
         this->actual_hp = 9000;
@@ -105,6 +111,11 @@ Nooter::Nooter(QString name)
         this->energy_gain_per_turn=5;
         this->maximum_energy=100;
     }
+}
+
+QString Nooter::getName() const
+{
+    return name;
 }
 
 int Nooter::getActual_hp() const
@@ -125,6 +136,11 @@ int Nooter::getMaximum_energy() const
 int Nooter::getEnergy_gain_per_turn() const
 {
     return energy_gain_per_turn;
+}
+
+Attack Nooter::getAttackAt(int index)
+{
+    return attacks.at(index);
 }
 
 void Nooter::updateEnergy(int value)

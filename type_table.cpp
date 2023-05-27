@@ -27,8 +27,6 @@ void Type_table::initTable()
     initVol();      initPsy();          initInsecte();
     initRoche();    initFantome();      initDragon();
     initAcier();    initFee();          initNoot();
-
-    cout<<toString()<<endl;
 }
 
 
@@ -274,29 +272,27 @@ Type Type_table::getType(QString nomType)
             return type;
         }
     }
-
-    Type typeVide("Type_vide");
-    return typeVide;
+    return Type("Type_vide");
 }
 
 QString Type_table::toString()
 {
     QString res;
     QTextStream buf(&res);
-    buf<<"Type_table contains :\n[ ";
+    buf<<"[\n";
 
     int i = 1;
     foreach (Type type, listType) {
         if( i % 3 == 0 ){
-            buf<<type.toString()<<"}\n";
+            buf<<type.toString()<<" }\n";
         } else if( i % 3 == 1 ){
-            buf<<"{"<<type.toString()<<", ";
+            buf<<"  { "<<type.toString()<<", ";
         }
         else {
             buf<<type.toString()<<", ";
         }
         i++;
     }
-    buf<<" ]";
+    buf<<"]";
     return res;
 }

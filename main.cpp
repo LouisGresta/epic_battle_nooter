@@ -13,10 +13,6 @@ using namespace qstd;
 
 Type_table type_table;
 
-void testToString(void)
-{
-}
-
 void testCreationNooters()
 {
     Attack defo1("deforestation" , "wallah je coupe des arbres", 1000, 0,0,type_table.getType("Herbe"));
@@ -26,9 +22,7 @@ void testCreationNooters()
 
     QList<Attack> liste_atk_n = QList<Attack>({defo1,defo2,defo3,defo4});
     Nooter nootnoot("The_Original_Nooter" , type_table.getType("Herbe"),liste_atk_n ,10000,20,10,100 );
-    cout<<"test nooters \n"<<nootnoot.toString();
-
-    cout<<"\n test type name : "<< type_table.getType("Herbe").getName();
+    cout<<"test nooters \n" << nootnoot.toString() << endl;
 
 }
 
@@ -36,6 +30,7 @@ void testCreationJoueurs()
 {
     Player Joueur1("Joueur 1");
     Player Joueur2("Joueur 2");
+    // ajouter des nooters aux joueurs
     cout << Joueur1.toString() << "\n";
     cout << Joueur2.toString() << "\n";
 }
@@ -43,15 +38,15 @@ void testCreationJoueurs()
 void testCreationTypes()
 {
     // affichage du tableau des types
-    cout << "Test Table" << endl;
+    cout << "Test Table" << endl << type_table.toString() << endl;
+    cout<<"\n test type name : "<< type_table.getType("Herbe").getName() << endl;
 }
 
 void testCreationAttacks()
 {
-
     Attack defo1("deforestation" , "wallah je coupe des arbres", 1000, 0,0,type_table.getType("Herbe"));
 
-    cout<<"test attack \n"<<defo1.toString();
+    cout<<"test attack \n"<<defo1.toString() << endl;
 }
 
 int main(int argc, char *argv[])
@@ -60,11 +55,10 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     cout << "TestToString" << endl;
-    testToString();
-    testCreationJoueurs();
-
+    testCreationTypes();
     testCreationAttacks();
     testCreationNooters();
+    testCreationJoueurs();
     w.show();
     return a.exec();
 }

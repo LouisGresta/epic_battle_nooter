@@ -27,6 +27,7 @@ public:
     int getActual_energy() const;
     int getMaximum_energy() const;
     int getEnergy_gain_per_turn() const;
+    Attack getAttackAt(int index);
     void updateEnergy(int value);
     int getMaximum_hp() const;
     int useAttack(Attack a);
@@ -34,6 +35,7 @@ public:
     void endTurn();
     QString toString();
     bool operator==(Nooter nooter) const;
+    QString getName() const;
 };
 
 #endif // NOOTER_H
