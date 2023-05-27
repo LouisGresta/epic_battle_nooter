@@ -65,9 +65,9 @@ void Canevas::paintEvent(QPaintEvent *event)
     int widthRect = 6;
     pen.setWidth(widthRect);
     painter.setPen(pen);
-    painter.drawRect(widthRect/2, 414+widthRect/2, 621-widthRect, 100-widthRect);
+    painter.drawRect(widthRect/2, background_height+widthRect/2, background_width-widthRect, 100-widthRect);
     painter.setBrush(QBrush(QColor(186, 136, 119)));
-    painter.drawRect(widthRect/2, 414+widthRect/2, 2*621/3-widthRect, 100-widthRect);
+    painter.drawRect(widthRect/2, background_height+widthRect/2, 2*background_width/3-widthRect, 100-widthRect);
     painter.setBrush(QBrush(QColor(240, 240, 240)));
     pen.setColor(QColor(255, 0, 0));
     pen.setWidth(2);

@@ -9,8 +9,9 @@ class Canevas : public QWidget
 {
     Q_OBJECT
 private:
+    int background_height=414, background_width=621;
     QGridLayout *grid_layout = new QGridLayout();
-    QLabel message = QLabel("Je ne suis pas un hero, je veux pas croire \nce que disent les journaux");
+    QLabel message = QLabel("Je n'suis paaaaas un héro, j'veux pas croire ce que disent les journaux.");
     QLabel cases[2][2] = {
         {
             QLabel("first case"),
