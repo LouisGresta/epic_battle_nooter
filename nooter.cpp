@@ -163,8 +163,13 @@ int Nooter::useAttack(Attack attack)
     return -1;
 }
 
-void Nooter::getAttacked(int value)
+void Nooter::getAttacked(Attack attack)
 {
+    //degat envoyé
+    int damageSended = attack.getDamage();
+    //calcul des degats selon le type de l'attaque et le type du perso qui recoit
+
+    //envoie des degats
     actual_hp-= value;
 }
 

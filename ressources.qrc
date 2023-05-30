@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>ressources/background/winter_battle_background.jpg</file>
         <file>ressources/nooters/Terminootor.png</file>
+        <file>ressources/nooters/Nootkia.png</file>
+        <file>ressources/nooters/BatNoot.png</file>
+        <file>ressources/nooters/BigNoot.png</file>
+        <file>ressources/nooters/Nootzilla.png</file>
     </qresource>
 </RCC>
