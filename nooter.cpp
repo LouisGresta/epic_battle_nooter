@@ -165,12 +165,22 @@ int Nooter::useAttack(Attack attack)
 
 void Nooter::getAttacked(Attack attack)
 {
-    //degat envoyé
-    int damageSended = attack.getDamage();
+    //degat de l'attaque
+    int atkDmg = attack.getDamage();
     //calcul des degats selon le type de l'attaque et le type du perso qui recoit
 
+    Type typeAttack = attack.getType();
+    float defenseRatio = getDefenseRatio(typeAttack, this->type);
+
     //envoie des degats
-    actual_hp-= value;
+    actual_hp -= atkDmg * defenseRatio;
+}
+
+float Nooter::getDefenseRatio(Type attaquant, Type defenseur)
+{
+    int iDef = defenseur.getIndex();
+
+    return attaquant.getAtkAtIndex(iDef);
 }
 
 void Nooter::endTurn()
