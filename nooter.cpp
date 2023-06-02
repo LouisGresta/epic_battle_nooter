@@ -11,14 +11,14 @@ Nooter::Nooter(QString name, Type type, QList<Attack> attacks, int hp, int energ
 
 Nooter::Nooter(QString name)
 {
-    if (name == "Nootkia")
+    if (name == "Nookia")
     {
         Attack autodestruction("Autodestruction", "la batterie est vieille, EXPLOSION", 1000, 0, 0, types.getType("Feu"));
         Attack ultrason("Ultrason", "emet un ultrason grace a la technologie de pointe", 2000, 0, 0, types.getType("Psy"));
         Attack decharge("Décharge", "consomme de sa batterie pour lancer de l'elec", 3000, 20, 0, types.getType("Electrique"));
         Attack charge("Charge", "se jette sur l'ennemie", 4000, 0, 0, types.getType("Normal"));
 
-        this->name = "Nootkia";
+        this->name = "Nookia";
         this->type = types.getType("Acier");
         this->attacks = QList<Attack>({autodestruction, ultrason, decharge, charge});
         ;
@@ -30,14 +30,14 @@ Nooter::Nooter(QString name)
         this->maximum_energy = 100;
     }
 
-    else if (name == "Original_Noot")
+    else if (name == "OriginalNoot")
     {
-        Attack defo1("deforestation", "wallah je coupe des arbres", 1000, 0, 0, types.getType("Herbe"));
-        Attack defo2("DEFORESTATION", "encore mieux", 2000, 0, 0, types.getType("Herbe"));
-        Attack defo3("DEFORESTATION !", "je découpe beaucoup", 3000, 0, 0, types.getType("Herbe"));
-        Attack defo4("DEFORESTATION !!!", "y'a plus d'arbre", 4000, 0, 0, types.getType("Herbe"));
+        Attack defo1("deforestation", "wallah je coupe des arbres", 1000, 0, 0, types.getType("Plante"));
+        Attack defo2("DEFORESTATION", "encore mieux", 2000, 0, 0, types.getType("Plante"));
+        Attack defo3("DEFORESTATION !", "je découpe beaucoup", 3000, 0, 0, types.getType("Plante"));
+        Attack defo4("DEFORESTATION !!!", "y'a plus d'arbre", 4000, 0, 0, types.getType("Plante"));
 
-        this->name = "Original_Noot";
+        this->name = "OriginalNoot";
         this->type = types.getType("Noot");
         this->attacks = QList<Attack>({defo1, defo2, defo3, defo4});
         ;

@@ -23,7 +23,7 @@ private:
     Nooter nooters[NB_NOOTERS] = {
         Nooter("OriginalNoot"),
         Nooter("BigNoot"),
-        Nooter("Nootkia"),
+        Nooter("Nookia"),
         Nooter("Nooragan"),
         Nooter("Nootilus"),
         Nooter("PyroNoot"),

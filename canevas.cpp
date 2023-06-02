@@ -137,7 +137,7 @@ void Canevas::paintEvent(QPaintEvent *event)
 
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
-            cases[i][j].setText(activeNooter->getAttackAt(i+j).getName());
+            cases[i][j].setText(activeNooter->getAttackAt(i*2+j).getName());
         }
     }
 
