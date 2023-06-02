@@ -13,7 +13,7 @@ private:
     void initNormal();
     void initFeu();
     void initEau();
-    void initHerbe();
+    void initPlante();
     void initElectrique();
     void initGlace();
     void initCombat();
