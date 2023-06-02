@@ -170,7 +170,7 @@ void Canevas::keyPressEvent(QKeyEvent *event)
         // lancer attaque sélectionnée
         Attack selected_attack = activeNooter->getAttackAt(selected_case_indexes[0]+selected_case_indexes[1]);
         qDebug() << "send attack " << selected_attack.toString();
-        inactiveNooter->getAttacked(selected_attack.getDamage());
+        inactiveNooter->getAttacked(selected_attack);
         // animation d'attaque (clignotement adversaire)
         attack_animation(2);
         // rendre impossible la selection d'attaque pendant l'animation

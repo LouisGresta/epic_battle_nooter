@@ -18,8 +18,8 @@ private:
     int selected_case_indexes[2] = {0, 0};
     QLabel *selected_case = &cases[selected_case_indexes[0]][selected_case_indexes[1]];
     //tmp nooters
-    Nooter terminootor1 = Nooter("Terminootor");
-    Nooter terminootor2 = Nooter("Terminootor");
+    Nooter terminootor1 = Nooter("BatNoot");
+    Nooter terminootor2 = Nooter("Nootzilla");
     Nooter *activeNooter = &terminootor1, *inactiveNooter = &terminootor2;
     // nooter positions
     int pos_x_nooter1 = 20, pos_y_nooter1 = 200;

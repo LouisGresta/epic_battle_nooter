@@ -31,7 +31,8 @@ public:
     void updateEnergy(int value);
     int getMaximum_hp() const;
     int useAttack(Attack a);
-    void getAttacked(int value);
+    void getAttacked(Attack attack);
+    float getDefenseRatio(Type attaquant, Type defenseur);
     void endTurn();
     QString toString();
     bool operator==(Nooter nooter) const;

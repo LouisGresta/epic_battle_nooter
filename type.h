@@ -15,13 +15,13 @@ public:
     QString getName() const;
     QString getNameAtIndex(int index);
     float getAtkAtIndex(int index);
-    float getDefAtIndex(int index);
+    int getIndex();
 
     bool isInTypes(Type type);
 
     void addType(Type_tuple tuple);
-
     void setType(const Type &newType);
+
     QString toString();
     bool operator==(Type type) const;
 

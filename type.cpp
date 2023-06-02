@@ -22,6 +22,18 @@ float Type::getAtkAtIndex(int index)
     return types_strenghts.at(index).coef;
 }
 
+int Type::getIndex()
+{
+    int index = 0;
+    foreach (Type_tuple type_tuple, types_strenghts) {
+        if( this->name == type_tuple.name ){
+            return index;
+        }
+        index++;
+    }
+    return index;
+}
+
 bool Type::isInTypes(Type type)
 {
     foreach (Type_tuple type_tuple, types_strenghts)

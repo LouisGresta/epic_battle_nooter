@@ -39,7 +39,17 @@ void testCreationTypes()
 {
     // affichage du tableau des types
     cout << "Test Table" << endl << type_table.toString() << endl;
-    cout<<"\n test type name : "<< type_table.getType("Herbe").getName() << endl;
+    Type typeAttaquant = type_table.getType("Roche");
+    Type typeDefenseur = type_table.getType("Normal");
+    cout<<"\n"<<"Test type name : " << typeAttaquant.getName() << endl;
+    int indexAtt = typeAttaquant.getIndex();
+    int indexDef = typeDefenseur.getIndex();
+    cout<<"Type "<<typeAttaquant.getName()<<" index : "<<indexAtt<<endl;
+    QString name = typeAttaquant.getNameAtIndex(indexAtt);
+    cout<<"Name at index : "<<name<<endl;
+//    float ratio = typeAttaquant.getAtkAtIndex(indexDef);
+    float ratio = typeDefenseur.getAtkAtIndex(indexAtt);
+    cout<<"Ratio at index : "<<ratio<<endl;
 }
 
 void testCreationAttacks()
@@ -56,9 +66,9 @@ int main(int argc, char *argv[])
 
     cout << "TestToString" << endl;
     testCreationTypes();
-    testCreationAttacks();
+    /*testCreationAttacks();
     testCreationNooters();
-    testCreationJoueurs();
+    testCreationJoueurs();*/
     w.show();
     return a.exec();
 }

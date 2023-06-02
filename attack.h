@@ -25,6 +25,7 @@ public:
     bool operator==(Attack attack) const;
     QString getName() const;
     QString getDescription() const;
+    Type getType() const;
 };
 
 #endif // C_ATTACK_H
