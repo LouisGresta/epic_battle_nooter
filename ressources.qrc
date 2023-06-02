@@ -1,10 +1,24 @@
 <RCC>
-    <qresource prefix="/">
-        <file>ressources/background/winter_battle_background.jpg</file>
-        <file>ressources/nooters/Terminootor.png</file>
-        <file>ressources/nooters/Nootkia.png</file>
-        <file>ressources/nooters/BatNoot.png</file>
-        <file>ressources/nooters/BigNoot.png</file>
-        <file>ressources/nooters/Nootzilla.png</file>
+    <qresource prefix="/ressources">
+        <file alias="background">ressources/background/battleBackground.jpg</file>
+    </qresource>
+    <qresource prefix="/back">
+        <file alias="backBigNoot">ressources/nooters/back/BigNoot.png</file>
+        <file alias="backNookia">ressources/nooters/back/Nookia.png</file>
+        <file alias="backNooragan">ressources/nooters/back/Nooragan.png</file>
+        <file alias="backNootilus">ressources/nooters/back/Nootilus.png</file>
+        <file alias="backNootzilla">ressources/nooters/back/Nootzilla.png</file>
+        <file alias="backOriginalNoot">ressources/nooters/back/OriginalNoot.png</file>
+        <file alias="backPyroNoot">ressources/nooters/back/PyroNoot.png</file>
+    </qresource>
+    <qresource prefix="/front">
+        <file alias="frontBigNoot">ressources/nooters/front/BigNoot.png</file>
+        <file alias="frontNookia">ressources/nooters/front/Nookia.png</file>
+        <file alias="frontNooragan">ressources/nooters/front/Nooragan.png</file>
+        <file alias="frontNootilus">ressources/nooters/front/Nootilus.png</file>
+        <file alias="frontNootzilla">ressources/nooters/front/Nootzilla.png</file>
+        <file alias="frontOriginalNoot">ressources/nooters/front/OriginalNoot.png</file>
+        <file alias="frontPyroNoot">ressources/nooters/front/PyroNoot.png</file>
+        <file alias="frontTerminootor">ressources/nooters/front/Terminootor.png</file>
     </qresource>
 </RCC>

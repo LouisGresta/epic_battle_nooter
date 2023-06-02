@@ -6,24 +6,33 @@
 #include <QLabel>
 #include <QWidget>
 
+#define NB_NOOTERS 7
+
 class Canevas : public QWidget
 {
     Q_OBJECT
 private:
-    int background_height=414, background_width=621;
+    int background_height=480, background_width=720;
     QGridLayout *grid_layout = new QGridLayout();
     // labels
     QLabel message = QLabel("Veuillez sélectionner une attaque.");
     QLabel cases[2][2];
     int selected_case_indexes[2] = {0, 0};
     QLabel *selected_case = &cases[selected_case_indexes[0]][selected_case_indexes[1]];
-    //tmp nooters
-    Nooter terminootor1 = Nooter("BatNoot");
-    Nooter terminootor2 = Nooter("Nootzilla");
-    Nooter *activeNooter = &terminootor1, *inactiveNooter = &terminootor2;
+    //nooters
+    Nooter nooters[NB_NOOTERS] = {
+        Nooter("OriginalNoot"),
+        Nooter("BigNoot"),
+        Nooter("Nootkia"),
+        Nooter("Nooragan"),
+        Nooter("Nootilus"),
+        Nooter("PyroNoot"),
+        Nooter("Nootzilla")
+    };
+    Nooter *activeNooter, *inactiveNooter;
     // nooter positions
-    int pos_x_nooter1 = 20, pos_y_nooter1 = 200;
-    int pos_x_nooter2 = 425, pos_y_nooter2 = 100;
+    int pos_x_nooter1 = 140, pos_y_nooter1 = 200;
+    int pos_x_nooter2 = 500, pos_y_nooter2 = 140;
     // scene triggers
     int attack_animation_running = 0;
     bool change_player_screen = false;

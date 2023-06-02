@@ -52,7 +52,7 @@ Nooter::Nooter(QString name)
     {
         Attack rugissement("Rugissement du dragon", "j'en ai marre d'écrire les descriptions", 1000, 0, 0, types.getType("Dragon"));
         Attack queue("Coup de queue", "tape avec sa queue", 2000, 0, 0, types.getType("Combat"));
-        Attack pic("Lance pic", "envoie les pic de son dos", 3000, 0, 0, types.getType("Insect"));
+        Attack pic("Lance pic", "envoie les pic de son dos", 3000, 0, 0, types.getType("Insecte"));
         Attack poing("Coup de poing", "coup de poing que king kong lui a apprie", 4000, 0, 0, types.getType("Combat"));
 
         this->name = "Nootzilla";

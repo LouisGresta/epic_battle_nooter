@@ -6,7 +6,7 @@
 #include <chrono>
 #include <thread>
 #include <ctime>
-
+#include <cstdlib>
 
 Canevas::Canevas(QWidget *parent)
     : QWidget{parent}
@@ -27,6 +27,11 @@ Canevas::Canevas(QWidget *parent)
         }
     }
     setLayout(grid_layout);
+    // init nooters
+    srand((unsigned) time(NULL));
+    activeNooter = new Nooter(nooters[rand()%NB_NOOTERS]);
+    inactiveNooter = new Nooter(nooters[rand()%NB_NOOTERS]);
+
 }
 
 void Canevas::updateSelectedCase()
@@ -36,7 +41,6 @@ void Canevas::updateSelectedCase()
 
 void Canevas::drawNooter(QPainter *painter, Nooter nooter, int x, int y, bool active)
 {
-    QPixmap noot(":/ressources/nooters/" + nooter.getName() + ".png");
     int line_lenght = 150;
     int width_hp_bar = 6;
     int width_energy_bar = 4;
@@ -50,6 +54,7 @@ void Canevas::drawNooter(QPainter *painter, Nooter nooter, int x, int y, bool ac
     painter->setPen(pen);
     painter->drawLine(x, y, x+((float) nooter.getActual_hp()/nooter.getMaximum_hp() * line_lenght), y);
     if(active){
+        QPixmap noot(":/back/back" + nooter.getName());
         // draw Energy
         int diff_bar_width = width_hp_bar - width_energy_bar;
         pen.setWidth(width_energy_bar);
@@ -70,14 +75,15 @@ void Canevas::drawNooter(QPainter *painter, Nooter nooter, int x, int y, bool ac
     }
     else if(attack_animation_running%2 == 0) {
         // opponent nooter
+        QPixmap noot(":/front/front" + nooter.getName());
         painter->drawPixmap(x, y, img_size, img_size, noot);
     }
 }
 
 void Canevas::drawBackground(QPainter *painter)
 {
-    QImage background(":/ressources/background/winter_battle_background.jpg");
-    painter->drawImage(0, 0, background);
+    QImage background(":/ressources/background");
+    painter->drawImage(QRect(0, 0, background_width, background_height), background);
     QPen pen = QPen(QColor(100, 100, 100));
     int width_rect_line = 6;
     pen.setWidth(width_rect_line);
